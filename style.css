@@ -20,14 +20,15 @@
 
   /* Kort med billeder skal have nul padding, men deres indhold skal matche padding’en fra de øvrige kort. */
 
-  /* &:has(img):not(.content) {
+  &:has(img) {
     padding: 0;
-  } */
+
+    .content {
+      padding: 1rem;
+    }
+  }
 }
 
-.card:has(img):not(.content) {
-    padding: 0;
-  }
 /************/
 
 @layer reset, cards;
