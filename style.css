@@ -1,4 +1,32 @@
+/* Du skal arbejde med denne branch, som indeholder et HTML-dokuement med overskrifter, paragraffer, et citat og et billede. Din opgave er at anvende CSS Grid, i stedet for den teknik, der er anvendt i style.css, til at lave et fleksibelt breakout-layout, hvor elementer som citatblokke og billeder strækker sig ud over deres sædvanlige containerbredde.
+
+Du skal navngive dine grid-linjer, så du nemmere kan placere diverse elementer i grid'et (se teknikken under "Ressourcer").
+
+Citatblokken skal udvide sig ud over den normale indholdskolonne – du bestemmer selv, hvor meget.
+
+Billeder skal fylde viewportens bredde. */
+
 article {
-    max-width: 65ch;
-    margin-inline: auto;
+  /* max-width: 65ch;
+  margin-inline: auto; */
+
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr
+    [feature-start] minmax(0, 5rem)
+    [main] 60ch
+    minmax(0, 5rem) [feature-end]
+    1fr [full-end];
+
+  > * {
+    grid-column: main;
+  }
+
+  blockquote {
+    grid-column: feature;
+  }
+
+  img {
+    grid-column: full;
+  }
 }
