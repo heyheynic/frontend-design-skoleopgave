@@ -46,6 +46,7 @@ color: #202021;
 
   img {
     border: 1px solid #dadceb;
+    border-radius: 0.5rem 0.5rem 0 0 ;
   }
 }
 
