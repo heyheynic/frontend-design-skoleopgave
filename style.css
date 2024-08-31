@@ -1,11 +1,10 @@
-section:has(img) {
+section {
   max-width: 1200px;
   padding-inline: 1rem;
   color: var(--gray-900);
 
   display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-columns: [fig-start] 2.5fr [fig-end content-start cap-start] 1.5fr [cap-end] 1fr [content-end];
+  grid: 1fr auto / [fig-start] 2.5fr [fig-end content-start cap-start] 1.5fr [cap-end] 1fr [content-end];
   gap: 1.5rlh;
 
   h2 {
@@ -49,5 +48,19 @@ section:has(img) {
     color: var(--gray-900);
     background: var(--gray-100);
     padding: 0.4rlh 0.6rlh;
+  }
+}
+@media (max-width: 600px) {
+  section {
+    grid: auto / 1fr;
+
+    .content {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    figure {
+      grid-row: 2/4;
+    }
   }
 }
